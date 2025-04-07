@@ -11,13 +11,7 @@ import time
 model = joblib.load("svm_model (3).pkl")
 
 st.set_page_config(page_title="WebPulse AI", page_icon="🌐")
-#st.title("🌐 WebPulse AI — Smart Website Performance Predictor")
-
-
-st.markdown("""
-<h1 style='font-size: 32px;'>🌐 WebPulse AI — <span style='font-size: 14px;'>Smart Website Performance Predictor</span></h1>
-""", unsafe_allow_html=True)
-
+st.title("🌐 WebPulse AI — Smart Website Performance Predictor")
 
 
 st.caption("Developed by PhD Candidate Mohammad Ghattas")
