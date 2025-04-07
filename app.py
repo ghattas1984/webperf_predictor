@@ -22,7 +22,7 @@ st.markdown("""
 This application is part of a scientific research project that uses machine learning to evaluate website performance.  
 It extracts 10 real-world features from web pages without relying on any third-party APIs.  
 The model was trained on a balanced dataset and aims to provide accurate predictions to support web performance optimization.
-Developed by PhD candidate **Mohammad Ghattas**.
+
 
 
 """)
