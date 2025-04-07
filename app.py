@@ -14,16 +14,19 @@ st.set_page_config(page_title="Web Performance Predictor", page_icon="🌐")
 st.title("🌐 Website Performance Evaluation")
 
 st.markdown("""
+
 📌 **Important Note**
 
 This application is part of a scientific research project that uses machine learning to evaluate website performance.  
 It extracts 10 real-world features from web pages without relying on any third-party APIs.  
 The model was trained on a balanced dataset and aims to provide accurate predictions to support web performance optimization.
+Developed by PhD candidate **Mohammad Ghattas**.
+
 
 """)
 
+url = st.text_input("Enter Website URL:", placeholder="e.g. https://www.example.com")
 
-url = st.text_input("Enter Website URL:")
 
 if st.button("Analyze") and url:
     start_time = time.time()
