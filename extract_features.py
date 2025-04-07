@@ -11,7 +11,7 @@ def extract_features_from_url(url):
         response = requests.get(url, timeout=10)
         load_time = time.time() - start_time
 
-        page_size = len(response.content) / (1024 * 1024)  # MB
+        page_size = len(response.content) / (1024 * 1024)  
         html = response.text
 
         soup = BeautifulSoup(html, "html.parser")
@@ -23,18 +23,15 @@ def extract_features_from_url(url):
         time_to_interactive = document_complete_time + 1.2
         start_render_time = response_time + 0.5
 
-        # حفظ HTML مؤقتاً للتحقق
         temp_file = "temp_page.html"
         with open(temp_file, "w", encoding="utf-8") as f:
             f.write(html)
 
-        # تشغيل tidy أو html5validator يدويًا والتقاط عدد الأخطاء من stderr
         try:
             result = subprocess.run(
                 ["html5validator", "--root", ".", "--files", temp_file, "--also-check-css"],
                 capture_output=True, text=True
             )
-            # نحسب عدد السطور التي تحتوي على "Error" في الإخراج
             errors = result.stderr.strip().splitlines()
             markup_validation = len([e for e in errors if "Error:" in e])
         except Exception as e:
@@ -52,7 +49,7 @@ def extract_features_from_url(url):
                 except:
                     broken_links += 1
 
-        compression = int(page_size * 1024 * 0.4)  # KB
+        compression = int(page_size * 1024 * 0.4)  
         os.remove(temp_file)
 
         return [
