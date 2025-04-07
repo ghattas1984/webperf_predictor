@@ -8,17 +8,13 @@ import os
 import pandas as pd
 import time
 
-# تحميل النموذج المدرب مسبقًا
 model = joblib.load("svm_model (3).pkl")
 
-# إعداد الصفحة
 st.set_page_config(page_title="Web Performance Predictor", page_icon="🌐")
 st.title("🌐 Website Performance Evaluation")
 
-# إدخال رابط الموقع
 url = st.text_input("Enter Website URL:")
 
-# عند النقر على زر التحليل
 if st.button("Analyze") and url:
     start_time = time.time()
     with st.spinner("Analyzing the website, please wait..."):
@@ -32,7 +28,6 @@ if st.button("Analyze") and url:
     ]
     feature_dict = dict(zip(feature_names, features))
 
-    # في حال فشل التحليل
     if all(v == 0 for v in features):
         st.error("❌ Analysis failed or timed out. Please try again later or with another URL.")
     else:
@@ -48,19 +43,16 @@ if st.button("Analyze") and url:
         st.success(f"Predicted Website Performance: {performance_label}")
         st.info(f"🕒 Analysis Duration: {elapsed_time} seconds")
 
-        # عرض الخصائص
         st.subheader("🔍 Extracted Features")
         df_features = pd.DataFrame.from_dict(feature_dict, orient='index', columns=['Value'])
         st.table(df_features)
 
-        # عرض التوصيات
         recommendations = get_recommendations(features)
         if recommendations:
             st.subheader("💡 Recommendations for Improvement")
             for tip in recommendations:
                 st.warning(tip)
 
-        # تحليل بصري
         st.subheader("📊 Feature Analysis")
         fig, ax = plt.subplots()
         ax.barh(list(feature_dict.keys()), list(feature_dict.values()), color='skyblue')
@@ -68,7 +60,6 @@ if st.button("Analyze") and url:
         ax.set_title("Feature Analysis")
         st.pyplot(fig)
 
-        # زر تحميل التقرير PDF
         st.subheader("")
         if st.button("📄 Download PDF Report"):
             pdf = FPDF()
