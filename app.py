@@ -10,8 +10,10 @@ import time
 
 model = joblib.load("svm_model (3).pkl")
 
-st.set_page_config(page_title="Web Performance Predictor", page_icon="🌐")
-st.title("🌐 WebPulse AI: Website Performance Predictor")
+st.set_page_config(page_title="WebPulse AI", page_icon="🌐")
+st.title("🌐 WebPulse AI — Smart Website Performance Predictor")
+st.caption("Developed by PhD Candidate Mohammad Ghattas")
+
 
 st.markdown("""
 
