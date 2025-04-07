@@ -11,7 +11,7 @@ import time
 model = joblib.load("svm_model (3).pkl")
 
 st.set_page_config(page_title="Web Performance Predictor", page_icon="🌐")
-st.title("🌐 Website Performance Evaluation")
+st.title("🌐 WebPulse AI: Website Performance Predictor")
 
 st.markdown("""
 
