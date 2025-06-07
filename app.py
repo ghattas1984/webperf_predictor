@@ -14,7 +14,7 @@ st.set_page_config(page_title="WebPulse AI", page_icon="🌐")
 st.title("🌐 WebPulse AI — Smart Website Performance Predictor")
 
 
-st.caption("Developed by PhD Candidate Mohammad Ghattas")
+st.caption("Developed by PhD Candidate Mohammad Ghattas, under the supervision of Antonio M. Mora and Suhail Odeh")
 
 
 st.markdown("""
