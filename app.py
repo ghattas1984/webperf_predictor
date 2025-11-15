@@ -22,8 +22,8 @@ st.markdown("""
 
 📌 **Important Note**
 
-This application is part of a scientific research project that uses machine learning to evaluate website performance.  
-The model was trained on a balanced dataset and aims to provide accurate predictions to support web performance optimization.
+WebPulse AI is part of a scientific research project that applies machine learning techniques to evaluate and predict website performance. 
+The underlying model was trained on a balanced dataset and provides data-driven, metric-specific recommendations to support performance optimization.
 
 
 
